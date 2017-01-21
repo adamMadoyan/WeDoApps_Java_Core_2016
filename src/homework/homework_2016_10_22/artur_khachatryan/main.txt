@@ -1,0 +1,463 @@
+package main;
+import  java.util.Random;
+
+/**
+ *
+ * @author Artur
+ */
+public class Main {
+
+    
+    public static void main(String[] args) {
+    //  int [] array =  ArrayUtil.randomIntArray(10,10);
+   //  ArrayUtil.print(array);
+    //  ArrayUtil.print(array,"this is delimiter");
+    //  System.out.println(ArrayUtil.getMaximum(array));
+    //   System.out.println(ArrayUtil.getMinimum(array));
+     //   System.out.println(ArrayUtil.getSum(array));
+     //   int [] array2 = ArrayUtil.reverse(array);
+     //   ArrayUtil.print(array2);
+     //    ArrayUtil.print(array);
+     //    ArrayUtil.reverseInSameArray(array);
+      //   ArrayUtil.print(array);
+       //   ArrayUtil.swap(array,1,8);
+       //  ArrayUtil.print(array);
+        // int[][] matrix = Spiral.createSpiralMatrix(7);
+	Spiral.createSpiralMatrix(7);
+       
+        
+               
+		
+               
+         
+         
+    }
+    
+}
+ class ArrayUtil {
+    /**
+     * Creates an util filled with random values.
+     *
+     * @param length the length of the util
+     * @param n      the number of possible random values
+     * @return an util filled with length numbers between
+     *         0 and n-1
+     */
+    public static int[] randomIntArray(int length, int n) {
+        int[] array = new int[length];
+  
+        Random generator = new Random();
+        int size = array.length;
+        for(int i = 0; i < size; i++){
+            array[i] = generator.nextInt(n);
+            
+        }
+        
+        return array;
+    }
+
+    /**
+     * Sorts the util elements by odd and even number
+     * such that if first number is odd then second must be even number
+     * this means that it will be found the next even number and swap with the second element
+     * if the second element is odd. And so on for the next elements of the util
+     */
+    public static void sortByOddAndEven() {
+        
+        
+        
+        
+
+    }
+
+    public static int getMaximum(int[] array) {
+        int maximum = array[0];
+        
+        for(int x : array){
+           if( x > maximum ){
+               maximum = x;
+           } 
+             }
+        
+        return maximum; 
+    }
+
+
+    public static int getMinimum(int[] array) {
+        int minimum = array[0];
+        
+       for(int x : array){
+           if( x < minimum ){
+               
+               minimum = x;
+           } 
+             }
+        return minimum; 
+    }
+
+    /**
+     * Calculates the sum of specified <code>util</code>  elements
+     *
+     * @param array specified int util
+     * @return the sum of the specified util elements
+     */
+    public static int getSum(int[] array) {
+      int sum = 0 ;
+      for(int x:array){
+          sum += x;
+      }
+        return sum;  
+    }
+
+
+    /**
+     * Creates the reversed to specified array new array and returns it.
+     *
+     * @param array  an array corresponting to wich must be created reversed array
+     * @return new created reversed array to the specified paramter "array"
+     */
+    public static int[] reverse(int[] array) {
+        int [] reversedArray = new int [array.length];
+        int i,j;
+        int length = array.length-1;
+        for(  i = 0, j = length ;  i < j ; i++, j-- ){
+            reversedArray[i] = array[j];
+             reversedArray[j] = array[i];
+            
+            
+        } 
+        return reversedArray;
+    }
+    
+      
+        
+      
+       
+    
+
+    /**
+     * Reverses the elements order of the specified array
+     * @param array  an array: Elements order of wich must be reversed
+     */
+    public static void reverseInSameArray(int[] array) {
+         int length = array.length-1;
+        int i , j;
+        
+        
+        for(  i = 0, j = length ;  i < j ; i++, j-- ){
+            swap(array,i,j);
+
+    }
+    }
+
+    /**
+    * Swaps the elements at the specified positions in the specified array.
+    * (If the specified positions are equal, invoking this method leaves
+    * the array unchanged.)
+    *
+    * @param array The array in which to swap elements.
+    * @param i the index of one element to be swapped.
+    * @param j the index of the other element to be swapped.
+    * @throws IndexOutOfBoundsException if either i or j
+    *         is out of range (i < 0 || i >= array.length
+    *         || j < 0 || j >= array.length).
+    */
+    public static void swap(int[] array, int i, int j) {
+        if (i < 0 || i >= array.length || j < 0 || j >= array.length)
+            return ;
+        int sum = array[i] + array[j] ;
+        array[i] = sum - array [i] ;
+        array[j] = sum - array [j] ;
+        
+      
+    }
+
+    public static void print(int[] a) {
+        for(int x: a){
+            System.out.print(x + " ");
+        }
+       System.out.println();  
+    }
+
+    /**
+     * Prints all elements in an array by using specified delimiter between elements.
+     *
+     * @param a the util to print
+     */
+    public static void print(int[] a, String delimiter) {
+        for(int x : a){
+            System.out.print(x + " " + delimiter + " " );
+        }
+        System.out.println();
+    }
+
+
+}
+
+
+
+
+
+ class Triangle {
+
+    
+  
+       
+    
+    
+    public void a (){
+        
+        for (int i = 0; i < 5 ; i++){
+            for(int j = 0; j <= i; j++){
+                System.out.print("*");
+            }
+            System.out.println(); 
+        }
+    }
+    
+    public void b (){
+        
+          for (int i = 0; i < 5 ; i++){
+            for(int j = 5-i; j > 0; j--){
+                System.out.print("*");
+            }
+            System.out.println();
+         }
+        
+        
+    }
+    public void c (){
+        
+          for (int i = 0; i < 5 ; i++){
+            for(int j = 0; j < 5; j++){
+               if(j >= i){
+                   System.out.print("*");
+               }
+               else {
+                   
+                    System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+    }
+    
+    public void d (){
+         for (int i = 0; i < 5 ; i++){
+            for(int j = 0; j < 5; j++){
+               if(j >= 4-i){
+                   System.out.print("*");
+               }
+               else {
+                   
+                    System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+    }
+    
+    public void e (){
+        
+         for (int i = 0; i < 5 ; i++){
+            for(int j = 0; j < 5; j++){
+               if(j >= 4-i){
+                   System.out.print("* ");
+               }
+               else {
+                   
+                    System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+        
+    }
+    
+      public void e2 (){
+         for (int i = 0; i < 10 ; i+=2){
+            for(int j = 0; j < 10; j++){
+               if(j >= 9-i){
+                   System.out.print("* ");
+               }
+               else {
+                   
+                    System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+       
+        
+    }
+    
+    
+    
+    public void f (){
+         for (int i = 0; i < 5 ; i++){
+            for(int j = 0; j < 5; j++){
+               if(j >= i){
+                   System.out.print("* ");
+               }
+               else {
+                   
+                    System.out.print(" ");
+               }
+            }
+            System.out.println();
+         }
+        
+    }
+    
+    public void g (){
+        e();
+        f();
+    }
+    
+    public void h () {
+        e();
+        e();
+    }   
+      
+    public void h2 () {
+        e2();
+        e2();
+    }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ class Spiral {
+
+	
+
+	/**
+	 * For example, if odd_size is 7 then the result should be
+	 * the matrix described below:
+	 *
+	 * 31 30 29 28 27 26 49
+	 * 32 13 12 11 10 25 48
+	 * 33 14 3  2  9  24 47
+	 * 34 15 4  1  8  23 46
+	 * 35 16 5  6  7  22 45
+	 * 36 17 18 19 20 21 44
+	 * 37 38 39 40 41 42 43
+	 *
+	 * @param size size of columns and rows
+	 * @throws InvalidParameterException will be thrown if the specified size is not a odd number
+	 */
+	public static int[][] createSpiralMatrix(int size) {
+		int[][] matrix = new int[size][size];
+                
+                int  indexOfCenter = (size /2);
+                int v = 1;
+                int  ciklcounter = 1;
+                int  sizeOfCikls = ((size/2) + 1);
+               
+              for( int k = 0; k < sizeOfCikls; k ++){
+                  
+                  
+                  
+              int a = indexOfCenter;
+               int aa = indexOfCenter -1;
+               int aaa =  indexOfCenter;
+                for(int i = a ;i >= aa ; i-- ){
+                matrix [i][aaa] = v++;
+                
+                }
+               
+                if(ciklcounter == sizeOfCikls) continue;
+                
+                int b = indexOfCenter-1 ;
+                int bb = indexOfCenter - 1 ;
+                int bbb = indexOfCenter - 1 ;
+                for(int i = b;i >= bb ; i--){
+                    matrix [bbb] [i] = v++;
+                
+                }
+                
+                
+               int c = indexOfCenter   ;
+                int cc = indexOfCenter + 1 ;
+                int ccc = indexOfCenter - 1 ;
+                for(int i = c; i <= cc; i++){
+                    matrix [i] [ccc] = v++;
+               }
+                
+                
+               int d = indexOfCenter  ;
+                int dd = indexOfCenter + 1 ;
+                int ddd = indexOfCenter + 1 ;
+                for(int i = d; i <= dd; i++){
+                    matrix[ddd] [i] = v++;
+                }
+                ciklcounter++;
+               } 
+             System.out.print(matrix[3][4]);
+              Spiral.print(matrix);
+		return matrix;
+	}
+
+	public static int countOfDigits(int number) {
+		if (number < 10) return 1;
+		if (number < 100) return 2;
+		if (number < 1000) return 3;
+		if (number < 10000) return 4;
+		if (number < 100000) return 5;
+		if (number < 1000000) return 6;
+		if (number < 10000000) return 7;
+		if (number < 100000000) return 8;
+		if (number < 1000000000) return 9;
+		return 10;
+	}
+
+	public static final String[] spaces = {
+		" ",
+		"  ",
+		"   ",
+		"    ",
+		"     ",
+		"      ",
+		"       ",
+		"        ",
+		"         "
+	};
+public static void print(int[][] matrix){
+    
+    
+    
+    for (int i = 0;i < matrix.length; i++){
+        for (int j= 0;j < matrix.length; j++){
+            
+        }
+        System.out.println();
+    
+    
+    }
+}
+
+	//public static void print(int[][] matrix) {
+	//	int size = matrix.length;
+	//	for (int i = 0; i < size; i++) {
+	//		int currRowLength = matrix[i].length;
+	//		for (int j = 0; j < currRowLength; j++) {
+	//			matrix[i][j] = i;
+	//			System.out.print(matrix[i][j] + spaces[countOfDigits(matrix[size - 1][size - 1])
+	//				- countOfDigits(matrix[i][j])]);
+	//		}
+	//		System.out.println();
+	//	}
+	//}
+}
