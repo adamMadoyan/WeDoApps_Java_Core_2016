@@ -24,6 +24,6 @@ public class Circle extends Figure {
 
     @Override
     public boolean isBelong(int x, int y) {
-        return Math.pow(this.width / 2, 2) >= Math.pow(x - (this.x + this.width / 2), 2) + Math.pow(y - (this.y + this.height / 2), 2);
+        return Math.pow(getWidth() / 2, 2) >= Math.pow(x - (getX() + getWidth() / 2), 2) + Math.pow(y - (getY() + getHeight() / 2), 2);
     }
 }

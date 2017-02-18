@@ -21,9 +21,14 @@ public class FigureFrame extends JFrame {
     public FigureFrame() throws HeadlessException {
         super("Figure frame");
 
-        JButton add = new JButton("Add");
+        JButton add    = new JButton("Add");
         JButton remove = new JButton("Remove");
-        JButton start = new JButton("Start");
+        JButton start  = new JButton("Start");
+        JButton pause  = new JButton("Pause");
+        JButton resume = new JButton("Continue");
+        JButton stop   = new JButton("Stop");
+
+
 
         add.addActionListener(new ActionListener() {
             @Override
@@ -39,10 +44,34 @@ public class FigureFrame extends JFrame {
             }
         });
 
+        pause.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pauseActionPerformed();
+            }
+        });
+
+        resume.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resumeActionPerformed();
+            }
+        });
+
+        stop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                stopActionPerformed();
+            }
+        });
+
         JPanel configPanel = new JPanel();
         configPanel.add(add);
         configPanel.add(remove);
         configPanel.add(start);
+        configPanel.add(pause);
+        configPanel.add(resume);
+        configPanel.add(stop);
 
         add(configPanel, BorderLayout.NORTH);
         add(canvas, BorderLayout.CENTER);
@@ -52,6 +81,18 @@ public class FigureFrame extends JFrame {
         setSize(750, 650);
         setLocation(150, 80);
 
+    }
+
+    private void pauseActionPerformed() {
+        canvas.pause();
+    }
+
+    private void resumeActionPerformed() {
+        canvas.resume();
+    }
+
+    private void stopActionPerformed() {
+        canvas.stop();
     }
 
     private void startActionPerformed() {

@@ -110,4 +110,22 @@ public class FigureCanvas extends JPanel {
             getSelected().start();
         }
     }
+
+    public void pause() {
+        if (isSelected) {
+            getSelected().pause();
+        }
+    }
+
+    public void resume() {
+        if (isSelected) {
+            getSelected().resume();
+        }
+    }
+
+    public void stop() {
+        if (isSelected) {
+            getSelected().stop();
+        }
+    }
 }
