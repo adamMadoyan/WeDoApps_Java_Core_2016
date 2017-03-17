@@ -8,7 +8,7 @@ public class StringDemo {
         String b = "kuku";
         String c = "kuku";
 
-        b = b + "u";
+//        b = b + "u";
 
         System.out.println(a == b);
         System.out.println(c == b);

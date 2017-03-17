@@ -36,7 +36,7 @@ public interface CustomSet<E> {
      *                              set does not permit null elements
      *                              (<a href="Collection.html#optional-restrictions">optional</a>)
      */
-    boolean contains(Object o);
+    boolean contains(E o);
 
     /**
      * Returns an iterator over the elements in this set.  The elements are
@@ -104,7 +104,7 @@ public interface CustomSet<E> {
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *                                       is not supported by this set
      */
-    boolean remove(Object o);
+    boolean remove(E o);
 
     /**
      * Retains only the elements in this set that are contained in the

@@ -17,7 +17,14 @@ public class WrapperClassDemo {
 
         Integer a = 5;
         Integer aa = 5;
-        Integer c = 5;
+
+        Long l = 5L;
+        Long ll = 5L;
+        Integer c = -129;
+        Integer c1 = -129;
+
+        System.out.println("l == ll > " + (l == ll));
+        System.out.println("c == c1 > " + (c == c1));
 
         a++;
 
@@ -33,8 +40,9 @@ public class WrapperClassDemo {
         System.out.println(a == aa);
 
         Integer w = new Integer(55);
-        Integer q = new Integer(56);
+        Integer q = new Integer(55);
         int iQ = 55;
+        System.out.println("(w == q) = " + (w == q));
         System.out.println(q == iQ);
 
 
