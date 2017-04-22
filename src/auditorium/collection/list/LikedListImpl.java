@@ -1,4 +1,4 @@
-package auditorium.collection;
+package auditorium.collection.list;
 
 import java.util.NoSuchElementException;
 

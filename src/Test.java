@@ -1,35 +1,37 @@
 public class Test {
 
 
-    // Test
-    // barior hayer
-    //esel im coment@
-    // I like this programm
-    private String mainField;
+    public static void main(String[] args) {
 
-    void mainTest() {
-        System.out.println(mainField);
-    }
+        LinkedList linkedList = new LinkedList();
 
-    static class Nested {
+        for (int i = 0; i < 10; i++) {
+            linkedList.add(i);
+        }
 
-        private String nestedField;
+        linkedList.add(-1);
+        linkedList.add(100);
+        linkedList.add(-2);
+        linkedList.add(50);
+        linkedList.add(500000000);
 
-        void nestedTest() {
+        linkedList.removeLatest();
 
-            System.out.println();
+        LinkedList.ListIterator iterator = linkedList.listIterator();
 
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("============================");
+
+        linkedList.removeLessThen(7);
+
+        iterator = linkedList.listIterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
 
     }
-
-    class Inner {
-
-        private String innerField;
-
-        void innerTest() {
-
-        }
-    }
-
 }
